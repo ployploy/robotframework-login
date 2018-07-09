@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180709 22:19:49.155" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/chonnikant/workspace/toyota/login-app/robot/login.robot" id="s1" name="Login">
+<test id="s1-t1" name="Login Success">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:7272/html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180709 22:19:49.324" level="INFO">Opening browser 'chrome' to base url 'http://localhost:7272/html'.</msg>
+<status status="PASS" endtime="20180709 22:19:52.408" starttime="20180709 22:19:49.324"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>demo</arg>
+</arguments>
+<msg timestamp="20180709 22:19:52.410" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<status status="PASS" endtime="20180709 22:19:52.624" starttime="20180709 22:19:52.409"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>mode</arg>
+</arguments>
+<msg timestamp="20180709 22:19:52.624" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<status status="PASS" endtime="20180709 22:19:52.719" starttime="20180709 22:19:52.624"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20180709 22:19:52.719" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20180709 22:19:52.875" starttime="20180709 22:19:52.719"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Welcome</arg>
+</arguments>
+<status status="PASS" endtime="20180709 22:19:52.902" starttime="20180709 22:19:52.876"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180709 22:19:52.970" starttime="20180709 22:19:52.903"></status>
+</kw>
+<status status="PASS" endtime="20180709 22:19:52.971" critical="yes" starttime="20180709 22:19:49.323"></status>
+</test>
+<test id="s1-t2" name="Login Unsuccess with wrong username but correct password">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:7272/html</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180709 22:19:52.973" level="INFO">Opening browser 'chrome' to base url 'http://localhost:7272/html'.</msg>
+<status status="PASS" endtime="20180709 22:19:55.124" starttime="20180709 22:19:52.973"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>thawatchai</arg>
+</arguments>
+<msg timestamp="20180709 22:19:55.126" level="INFO">Typing text 'thawatchai' into text field 'username_field'.</msg>
+<status status="PASS" endtime="20180709 22:19:55.292" starttime="20180709 22:19:55.125"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>sckshuhari</arg>
+</arguments>
+<msg timestamp="20180709 22:19:55.292" level="INFO">Typing text 'sckshuhari' into text field 'password_field'.</msg>
+<status status="PASS" endtime="20180709 22:19:55.397" starttime="20180709 22:19:55.292"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20180709 22:19:55.399" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20180709 22:19:55.559" starttime="20180709 22:19:55.398"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Error</arg>
+</arguments>
+<status status="PASS" endtime="20180709 22:19:55.581" starttime="20180709 22:19:55.560"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180709 22:19:55.649" starttime="20180709 22:19:55.582"></status>
+</kw>
+<doc>ใส่ชื่อผู้ใช้ผิด</doc>
+<status status="PASS" endtime="20180709 22:19:55.650" critical="yes" starttime="20180709 22:19:52.972"></status>
+</test>
+<status status="PASS" endtime="20180709 22:19:55.652" starttime="20180709 22:19:49.157"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Login" pass="2">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
