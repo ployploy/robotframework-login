@@ -1,0 +1,8 @@
+Start login app
+
+Python
+    >python server.py start
+    access via: http://localhost:7272/html
+
+SeleniumLibrary Keywords
+    http://localhost:7272/html/SeleniumLibrary.html
