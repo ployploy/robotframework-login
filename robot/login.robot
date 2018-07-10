@@ -1,24 +1,40 @@
 *** Settings ***
 Library    SeleniumLibrary
+Suite Setup    Open Browser    ${LOCAL_URL}    ${BROWSER}
+Test Setup    Go To    ${LOCAL_URL}
+Suite Teardown    Close Browser
 
 *** Variables ***
+${LOCAL_URL}    http://localhost:7272/html    
+${BROWSER}      chrome
 
 *** Testcases ***
 Login Success
-    Open Browser    http://localhost:7272/html    chrome
-    Input Text    username_field    demo
-    Input Text    password_field    mode
-    Click Button    login_button
-    Wait Until Page Contains    Welcome
-    Close Browser
-    
+    กรอกข้อมูลในการ Login    demo    mode
+    กดปุ่มเพื่อดำเนินการ Login
+    ตรวจสอบผลการ Login    Welcome Page
+
 Login Unsuccess with wrong username but correct password
     [Documentation]    ใส่ชื่อผู้ใช้ผิด
-    Open Browser    http://localhost:7272/html    chrome
-    Input Text    username_field    thawatchai
-    Input Text    password_field    sckshuhari
-    Click Button    login_button
-    Wait Until Page Contains    Error
-    Close Browser
+    กรอกข้อมูลในการ Login    chonnikan    ployploy
+    กดปุ่มเพื่อดำเนินการ Login
+    ตรวจสอบผลการ Login    Error Page
+
+Login Unsuccess with correct username but wrong password
+    [Documentation]    ใส่ชื่อผู้ใช้ผิด
+    กรอกข้อมูลในการ Login    demo    sckshuharI
+    กดปุ่มเพื่อดำเนินการ Login
+    ตรวจสอบผลการ Login    Error Page
 
 *** Keywords ***
+กรอกข้อมูลในการ Login
+    [Arguments]    ${USERNAME}    ${PASSWORD}
+    Input Text    username_field    ${USERNAME}
+    Input Text    password_field    ${PASSWORD}
+
+กดปุ่มเพื่อดำเนินการ Login
+    Click Button    login_button
+
+ตรวจสอบผลการ Login
+    [Arguments]    ${MESSAGE}
+    Wait Until Page Contains    ${MESSAGE}
